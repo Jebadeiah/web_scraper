@@ -1,5 +1,9 @@
-# Write your code here
-word = 'python'
+import random
+
+
+words = ['python', 'java', 'kotlin', 'javascript']
+word = words[random.randint(0, 3)]
+
 
 print("H A N G M A N")
 guess = input("Guess the word: ")
