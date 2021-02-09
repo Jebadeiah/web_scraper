@@ -3,19 +3,29 @@ import random
 
 words = ['python', 'java', 'kotlin', 'javascript']
 word = words[random.randint(0, 3)]
-hint = ('-' * (len(word)))
+guesses = set()
 tries = 8
 
 
-print("H A N G M A N")
+print("H A N G M A N\n'll ")
 while tries > 0:
+    hint = ''
+    for i in word:
+        if i in guesses:
+            hint += i
+        else:
+            hint += '-'
     print(hint)
-    guess = input("Input a letter")
+    guess = input("Input a letter: ")
+    print()
     if guess in word:
-        word.replace()
-        print("You survived!")
+        tries -= 1
+        guesses.add(guess)
     else:
         tries -= 1
-        print("Whoops! Only {} tries left!".format(tries))
+        if tries == 0:
+            break
+        print("That letter doesn't appear in the word")
 
-print("You're trash! You're garbage!")
+print('Thanks for playing!')
+print("We'll see how well you did in the next stage")
