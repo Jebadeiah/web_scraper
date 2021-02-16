@@ -1,2 +1,3 @@
-wutang = list(input())
-print([int(x) if x == wutang[0] else int(x) + (int(wutang[wutang.index(x) - 1]) for x in wutang[:x]) for x in wutang])
+wutang = [int(x) for x in input()]
+wutang_clan = [sum(wutang[:y] for (x, y) in enumerate(wutang)) for x in wutang]
+print(wutang_clan)
