@@ -1,3 +1,9 @@
-wutang = [int(x) for x in input()]
-wutang_clan = [sum(wutang[:y] for (x, y) in enumerate(wutang)) for x in wutang]
-print(wutang_clan)
+def cumulative_sum(num_list):
+    wutang = []
+    bobby = 0
+    for digital in num_list:
+        bobby += digital
+        wutang.append(bobby)
+    return wutang
+
+print(cumulative_sum([int(x) for x in input()]))
