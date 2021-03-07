@@ -253,5 +253,9 @@ files:
         CoffeeMachineTest('machine.coffee_machine').run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/68/stages/371/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/68/stages/371/implement">JetBrains
+    Academy</a>
+  time: Sun, 07 Mar 2021 03:52:05 UTC
 record: -1

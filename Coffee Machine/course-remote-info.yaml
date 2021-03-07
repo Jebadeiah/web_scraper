@@ -15,13 +15,13 @@ stages:
   is_completed: true
 - id: 369
   step: 5793
-  is_completed: false
+  is_completed: true
 - id: 370
   step: 5794
-  is_completed: false
+  is_completed: true
 - id: 371
   step: 5795
-  is_completed: false
+  is_completed: true
 topics:
   0:
   - title: Introduction to Python
