@@ -164,5 +164,24 @@ files:
         Test().run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/162/stages/841/implement
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Wrong answer in test #2
+
+    Plain formatter returns the given text as is, and does not switch to a new line
+
+    Please find below the output of your program during this failed test.
+    Note that the '>' character indicates the beginning of the input line.
+
+    ---
+
+    - Choose a formatter:> plain
+    - Text: > plain text
+    plain text
+    - Choose a formatter:> bold
+    - Text: > bold text
+    **bold text**
+    - Choose a formatter:
+  time: Mon, 08 Mar 2021 04:21:13 UTC
 record: -1
