@@ -8,7 +8,7 @@ files:
 - name: tests.py
   visible: false
   text: |
-    from hstest import StageTest, TestedProgram, CheckResult, dynamic_test
+    from hstest import StageTest, TestedProgram, CheckResult, dynamic_test, WrongAnswer
 
 
     class Test(StageTest):
@@ -23,8 +23,12 @@ files:
 
         def check_result_in_file(self, attach):
             try:
-                with open('output.md', 'r') as outfile:
-                    output = outfile.read()
+                with open('output.md', 'r', encoding='utf-8') as outfile:
+                    try:
+                        output = outfile.read()
+                    except UnicodeDecodeError:
+                        raise WrongAnswer("An error occurred while reading your file.\n"
+                                          "Please, make sure you output your file in utf-8 encoding.")
                     if output != self.answers[attach]:
                         return CheckResult.wrong('The result written to the output file is wrong.')
             except IOError:

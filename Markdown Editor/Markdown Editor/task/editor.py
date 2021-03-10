@@ -1,5 +1,6 @@
 formatters = ("plain", "bold", "italic", "link",
               "inline-code", "header", "ordered-list", "unordered-list", "line-break")
+document = ""
 
 
 def plain(doc, text):
@@ -23,7 +24,8 @@ def link(doc, label, text):
 
 
 def inline_code(doc, text):
-    pass
+    doc += f"`{text}`"
+    return doc
 
 
 def header(doc, level, text):
@@ -45,7 +47,6 @@ def line_break(doc):
 
 
 while True:
-    document = ""
     user_input = input("- Choose a formatter:")
     if user_input in formatters:
         if user_input.lower() == "plain":
@@ -65,7 +66,8 @@ while True:
             print(document)
 
         elif user_input.lower() == "inline-code":
-            pass
+            document = inline_code(document, input("- Text: "))
+            print(document)
 
         elif user_input.lower() == "header":
             document = header(document, int(input("- Level: ")), input("- Text: "))
@@ -77,7 +79,7 @@ while True:
         elif user_input.lower() == "unordered list":
             pass
 
-        elif user_input.lower() == "new-line":
+        elif user_input.lower() == "line-break":
             document = line_break(document)
             print(document)
 
