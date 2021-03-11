@@ -1,0 +1,19 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    a = 1
+    b = 2
+    c = 3
+
+    # Don't forget to make use of lambda functions in your solution
+    result = (lambda ...)(a, b, c)
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7097
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/7097">JetBrains
+    Academy</a></html>
+  time: Wed, 10 Mar 2021 05:32:23 UTC
+record: -1
