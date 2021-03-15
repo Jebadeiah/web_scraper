@@ -1,0 +1,15 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    file = open('test_file.txt', 'w')
+    file.write('This line will be in the file!')
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8697
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/8697">JetBrains
+    Academy</a></html>
+  time: Sun, 14 Mar 2021 07:24:37 UTC
+record: -1

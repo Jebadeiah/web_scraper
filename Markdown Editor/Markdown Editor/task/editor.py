@@ -33,12 +33,14 @@ def header(doc, level, text):
     return doc
 
 
-def ordered_list(doc, text):
-    pass
-
-
-def unordered_list(doc, text):
-    pass
+def list_list(doc, rows, ordered):
+    for el in range(rows):
+        element = input(f"Row #{int(el) + 1}: ")
+        if ordered:
+            doc += f"{int(el) + 1}. {element}\n"
+        else:
+            doc += f"* {element}\n"
+    return doc
 
 
 def line_break(doc):
@@ -73,14 +75,21 @@ while True:
             document = header(document, int(input("- Level: ")), input("- Text: "))
             print(document)
 
-        elif user_input.lower() == "ordered list":
-            pass
-
-        elif user_input.lower() == "unordered list":
-            pass
-
         elif user_input.lower() == "line-break":
             document = line_break(document)
+            print(document)
+
+        elif user_input.lower() == "ordered-list" or "unordered-list":
+            if user_input.lower() == "ordered-list":
+                yorder = True
+            else:
+                yorder = False
+            print(yorder)
+            response = int(input("- Number of rows: "))
+            while response <= 0:
+                print("The number of rows should be greater than zero")
+                response = int(input("- Number of rows: "))
+            document = list_list(document, response, yorder)
             print(document)
 
     elif user_input == "!help":
