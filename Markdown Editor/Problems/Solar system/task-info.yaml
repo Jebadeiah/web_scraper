@@ -4,9 +4,6 @@ files:
   visible: true
   text: '# create the planets.txt'
   learner_created: false
-- name: planets.py
-  visible: true
-  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/8339
 status: Solved
 feedback:

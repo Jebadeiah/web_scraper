@@ -13,11 +13,5 @@ files:
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/8341
-status: Unchecked
-feedback:
-  message: |-
-    Connection to server was interrupted
-
-    timeout
-  time: Mon, 15 Mar 2021 08:48:37 UTC
+status: Solved
 record: -1
