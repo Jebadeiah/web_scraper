@@ -132,6 +132,51 @@ files:
     if __name__ == '__main__':
         WebScraperTest().run_tests()
   learner_created: false
+- name: First_monkey–human_embryos_reignite_debate_over_hybrid_animals.txt
+  visible: true
+  learner_created: true
+- name: movie_directory.json
+  visible: true
+  text: '{"movies": [{"title": "The Queen''s Gambit\u00a0            ", "description":
+    "None"}]}'
+  learner_created: true
+- name: COVID_research_updates_Common_asthma_medicine_could_shave_days_off_COVID_illness.txt
+  visible: true
+  learner_created: true
+- name: source.html
+  visible: true
+  text: |
+    <html>
+    <head>
+      <title>warming up</title>
+      <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+    <center>
+    <img src="calc.jpg"><br>
+    <font color="gold">
+    <p>Hint: try to change the URL address.
+    </body>
+    </html>
+  learner_created: true
+- name: How_many_T_rex_ever_existed_Calculation_of_dinosaur’s_abundance_offers_an_answer.txt
+  visible: true
+  learner_created: true
+- name: NIH_reverses_Trumpera_restrictions_on_fetaltissue_research.txt
+  visible: true
+  learner_created: true
+- name: The_race_to_curb_the_spread_of_COVID_vaccine_disinformation.txt
+  visible: true
+  learner_created: true
+- name: Author_Correction
+  visible: true
+  learner_created: true
+- name: India’s_COVIDvaccine_woes_—_by_the_numbers.txt
+  visible: true
+  learner_created: true
+- name: Coronapod
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/145/stages/785/implement#comment
 status: Unchecked
 record: -1
