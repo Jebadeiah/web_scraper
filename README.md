@@ -6,3 +6,5 @@ web_scraper > Web Scraper > Web Scraper > task
 
 There are also problems that I solved while working on this project. Those can be found in the following path - 
 web_scraper > Web Scraper > Problems
+
+This repo got messed up, so some of the problems can be found in the 'Topics' directory. 
