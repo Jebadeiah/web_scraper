@@ -21,15 +21,12 @@ files:
   visible: false
   text: |
     import glob
-    import os
     import random
     import re
     import shutil
     import string
 
-    from hstest.check_result import CheckResult
-    from hstest.stage_test import StageTest
-    from hstest.test_case import TestCase
+    from hstest import *
 
     import requests
     from furl import furl
@@ -52,7 +49,11 @@ files:
 
         def get_article_links_of_type(self, url, article_type="News"):
             origin_url = furl(url).origin
-            articles_resp = requests.get(url)
+            try:
+                articles_resp = requests.get(url)
+            except requests.exceptions.ConnectionError:
+                raise WrongAnswer(f"ConnectionError occurred when tests tried to reach the page \'{url}\'.\n"
+                                  f"Please try running tests again.")
             soup = BeautifulSoup(articles_resp.text, "html.parser")
             articles = soup.find_all(self.tag_containing_atricle_type)
             articles = list(filter(lambda x: x.text.strip() == article_type, articles))
@@ -132,16 +133,10 @@ files:
     if __name__ == '__main__':
         WebScraperTest().run_tests()
   learner_created: false
-- name: First_monkey–human_embryos_reignite_debate_over_hybrid_animals.txt
-  visible: true
-  learner_created: true
 - name: movie_directory.json
   visible: true
   text: '{"movies": [{"title": "The Queen''s Gambit\u00a0            ", "description":
     "None"}]}'
-  learner_created: true
-- name: COVID_research_updates_Common_asthma_medicine_could_shave_days_off_COVID_illness.txt
-  visible: true
   learner_created: true
 - name: source.html
   visible: true
@@ -159,24 +154,33 @@ files:
     </body>
     </html>
   learner_created: true
-- name: How_many_T_rex_ever_existed_Calculation_of_dinosaur’s_abundance_offers_an_answer.txt
-  visible: true
-  learner_created: true
-- name: NIH_reverses_Trumpera_restrictions_on_fetaltissue_research.txt
-  visible: true
-  learner_created: true
-- name: The_race_to_curb_the_spread_of_COVID_vaccine_disinformation.txt
-  visible: true
-  learner_created: true
 - name: Author_Correction
-  visible: true
-  learner_created: true
-- name: India’s_COVIDvaccine_woes_—_by_the_numbers.txt
   visible: true
   learner_created: true
 - name: Coronapod
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/145/stages/785/implement#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Exception in test #1
+
+    Traceback (most recent call last):
+      File "scraper.py", line 55, in <module>
+        save_news(num_pages, type_of_articles, og_url)
+      File "scraper.py", line 51, in save_news
+        get_news(the_page, types)
+      File "scraper.py", line 36, in get_news
+        article_body = body_soup.find('div', class_='article__body').text.strip()
+    AttributeError: 'NoneType' object has no attribute 'text'
+
+    Please find below the output of your program during this failed test.
+    Note that the '>' character indicates the beginning of the input line.
+
+    ---
+
+    > 3
+    > Research Highlight
+  time: Fri, 23 Apr 2021 05:31:13 UTC
 record: -1
