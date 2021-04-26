@@ -1,4 +1,4 @@
-import os
+#import os
 import requests
 import string
 
@@ -11,6 +11,9 @@ num_pages = int(input())
 type_of_articles = input()
 
 
+#def build_directory():
+
+
 def clean_name(an_article):
     an_article = an_article.find('a', {'data-track-label': 'link'}).text.translate(str.maketrans(
         '', '', string.punctuation)).strip().replace(' ', '_')
@@ -21,7 +24,7 @@ def get_url(current_article, is_body=False):
     if is_body:
         suffix = current_article.find('a').get('href')
     else:
-        suffix = current_article.find('li', class_="c-pagination__item").get('href')
+        suffix = current_article.find_all('li', {'data-test': 'page-next'}).get('href')
     return f'https://www.nature.com{suffix}'
 
 
@@ -31,13 +34,14 @@ def get_news(this_url, this_type):
     for article in articles:
         article_type = article.find('span', class_='c-meta__type')
         if this_type in article_type:
-            body_url = get_url(article, True)
+            body_url = get_url(article, is_body=True)
+            print(f'--- DID MY CODE MAKE IT THIS FAR!?!? {body_url} ---')
             body_soup = get_soup(body_url)
-            article_body = body_soup.find('div', class_='article__body').text.strip()
+            article_body = (body_soup.find('div', class_='article-item__body')).text.strip()
             saved_articles.append(clean_name(article))
             with open(f'{clean_name(article)}.txt', 'wb') as the_article:
                 the_article.write(article_body.encode())
-                print(os.getcwd())
+#                print(os.getcwd())
 
 
 def get_soup(url):
@@ -47,9 +51,10 @@ def get_soup(url):
 
 def save_news(number_of_pages, types, url):
     the_page = url
-    for num in range(1, number_of_pages):
+    for num in range(0, number_of_pages):
         get_news(the_page, types)
         the_page = get_url(the_page)
+        print(f'START THE WU {the_page} TANG THE END')
 
 
 save_news(num_pages, type_of_articles, og_url)
