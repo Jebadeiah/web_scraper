@@ -133,11 +133,6 @@ files:
     if __name__ == '__main__':
         WebScraperTest().run_tests()
   learner_created: false
-- name: movie_directory.json
-  visible: true
-  text: '{"movies": [{"title": "The Queen''s Gambit\u00a0            ", "description":
-    "None"}]}'
-  learner_created: true
 - name: source.html
   visible: true
   text: |
@@ -154,48 +149,18 @@ files:
     </body>
     </html>
   learner_created: true
-- name: Author_Correction
+- name: Page 1/Animals’_bright_colours_don’t_lie_eat_me_and_you’ll_be_sorry.txt
   visible: true
   learner_created: true
-- name: Coronapod
+- name: Page 1/Dim_stars_that_have_failed_at_fusion_are_masters_of_spin.txt
   visible: true
   learner_created: true
-- name: A_century_of_US_data_documents_obesity’s_racially_skewed_rise.txt
-  visible: true
-  learner_created: true
-- name: Material_mimicking_lobster_belly_cracks_the_code_for_toughness.txt
-  visible: true
-  learner_created: true
-- name: The_world’s_lightest_uranium_atom_reveals_nuclear_secrets.txt
+- name: web_scrapers
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/145/stages/785/implement#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Exception in test #1
-
-    Traceback (most recent call last):
-      File ".idea\VirtualEnvironment\lib\site-packages\hstest\testing\execution\main_file_executor.py", line 64, in _invoke_method
-        runpy.run_module(
-      File "Web Scraper\task\scraper.py", line 60, in <module>
-        save_news(num_pages, type_of_articles, og_url)
-      File "Web Scraper\task\scraper.py", line 55, in save_news
-        get_news(the_page, types)
-      File "Web Scraper\task\scraper.py", line 37, in get_news
-        body_url = get_url(article, is_body=True)
-      File "Web Scraper\task\scraper.py", line 25, in get_url
-        suffix = current_article.find_all('a').get('href')
-      File ".idea\VirtualEnvironment\lib\site-packages\bs4\element.py", line 2173, in __getattr__
-        raise AttributeError(
-    AttributeError: ResultSet object has no attribute 'get'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
-
-    Please find below the output of your program during this failed test.
-    Note that the '>' character indicates the beginning of the input line.
-
-    ---
-
-    > 3
-    > Research Highlight
-  time: Mon, 26 Apr 2021 09:26:40 UTC
+  message: Congratulations!
+  time: Wed, 28 Apr 2021 06:11:01 UTC
 record: -1
